@@ -5,6 +5,7 @@
 
 	<li>
 	<%= e.topic %>
+	<p>編輯時間:<%= event.updated_at %></p>
 	<%= link_to "詳細災情", event_path(e) %>
 	<%= link_to "編輯", edit_event_path(e) %>
 	<%= link_to "刪除", event_path(e), :method => :delete, :data => {:confirm => "確定刪除？" } %>

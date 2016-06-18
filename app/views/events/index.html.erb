@@ -1,0 +1,16 @@
+<%= link_to "新增災情", new_event_path %>
+
+<ul>
+<% @events.each do |e| %>
+
+	<li>
+	<%= e.topic %>
+	<%= link_to "詳細災情", event_path(e) %>
+	<%= link_to "編輯", edit_event_path(e) %>
+	<%= link_to "刪除", event_path(e), :method => :delete, :data => {:confirm => "確定刪除？" } %>
+	</li>
+
+<% end%>
+</ul>
+
+<%= paginate @events %>

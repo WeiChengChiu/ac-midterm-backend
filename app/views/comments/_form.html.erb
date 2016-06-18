@@ -1,0 +1,13 @@
+<% if @comment.errors.any? %>
+  <ul>
+    <% @comment.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+  <%= f.label :name, "留言" %>
+  <%= f.text_area :name %>
+
+  <%= f.submit "發佈" %>

@@ -1,6 +1,20 @@
+<p>Category: <%= @event.category.try(:name) %><p>
 	<%=  @event.topic %>
 	<%= simple_format@event.description %>
 
-<p>
-	<%= link_to "首頁", events_path %>
-</p>
+
+
+<p><%= link_to '新增留言', new_event_comment_path(@event) %></p>
+<table>
+	<tr>
+    <td>留言</td>
+	</tr>
+		<% @comments.each do |comment| %>
+	<tr>
+	  <td><%= comment.name %></td>
+	  <td><%= link_to '編輯', edit_event_comment_path(@event, comment) %></td>
+	  <td><%= link_to '刪除', event_comment_path(@event, comment), :method => :delete, :data => {:confirm => "確定刪除?"} %></td>
+	</tr>
+    <% end %>
+</table>
+

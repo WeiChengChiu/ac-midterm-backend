@@ -7,6 +7,7 @@
 <% end %>
 
 
+<%= f.collection_select(:category_id, Category.all, :id, :name) %>
 <%= f.label :topic, "標題" %>
 <%= f.text_field :topic %>
 <%= f.label :description, "標題" %>

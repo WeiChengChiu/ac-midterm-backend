@@ -20,6 +20,7 @@ class EventsController < ApplicationController
 	end
 
 	def show
+		@comments = @event.comments
 	end
 
 	def edit
@@ -46,7 +47,7 @@ class EventsController < ApplicationController
 	private
 
 	def event_params
-		params.require(:event).permit(:topic, :description)
+		params.require(:event).permit(:topic, :description, :category_id)
 	end
 
 	def set_event
